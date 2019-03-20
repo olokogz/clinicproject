@@ -1,21 +1,14 @@
 package com.clinic.clinic_project.service;
 
-import com.clinic.clinic_project.controller.ClinicUserRepository;
-import com.clinic.clinic_project.model.Authorities;
+import com.clinic.clinic_project.repository.ClinicUserRepository;
 import com.clinic.clinic_project.model.Clinic_users;
 import com.clinic.clinic_project.security.services.UserPrinciple;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import javax.transaction.Transactional;
-import java.nio.file.attribute.UserPrincipal;
-import java.util.HashSet;
-import java.util.Set;
 
 @Service
 public class CustomUserDetails implements UserDetailsService {

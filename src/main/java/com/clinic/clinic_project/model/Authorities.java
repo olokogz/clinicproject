@@ -15,6 +15,7 @@ public class Authorities {
     @Column(name = "authority_id")
     private Long authority_id;
     @NotBlank
+    @Enumerated(EnumType.STRING)
     private RoleName userRoleName;
     @NotBlank
     private String description;

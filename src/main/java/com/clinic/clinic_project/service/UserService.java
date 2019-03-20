@@ -1,9 +1,7 @@
 package com.clinic.clinic_project.service;
 
-import com.clinic.clinic_project.controller.ClinicAuthoritiesRepostitory;
-import com.clinic.clinic_project.controller.ClinicUserRepository;
-import com.clinic.clinic_project.model.Authorities;
-import com.clinic.clinic_project.model.Clinic_users;
+import com.clinic.clinic_project.repository.ClinicAuthoritiesRepostitory;
+import com.clinic.clinic_project.repository.ClinicUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -25,13 +23,13 @@ public class UserService {
         this.clinicUserRepository = clinicUserRepository;
     }
 
-    @Autowired
-    public void addWithDefaultRole(Clinic_users clinic_users)
+     /*@Autowired
+   public void addWithDefaultRole(Clinic_users clinic_users)
     {
-        Authorities defaultRole = clinicAuthoritiesRepository.findByuserRoleName(DEFAULT_ROLE);
+        Authorities defaultRole = clinicAuthoritiesRepository.findByUserRoleName(DEFAULT_ROLE);
         clinic_users.getAuthorities().add(defaultRole);
         String passwordHash = passwordEncoder.encode(clinic_users.getPassword());
         clinic_users.setPassword(passwordHash);
         clinicUserRepository.save(clinic_users);
-    }
+    }*/
 }

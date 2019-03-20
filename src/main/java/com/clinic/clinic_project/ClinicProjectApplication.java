@@ -1,6 +1,6 @@
 package com.clinic.clinic_project;
 
-import com.clinic.clinic_project.controller.CarRepository;
+import com.clinic.clinic_project.repository.CarRepository;
 import com.clinic.clinic_project.model.Car;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;

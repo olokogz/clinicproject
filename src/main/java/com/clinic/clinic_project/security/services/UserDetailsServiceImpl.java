@@ -1,6 +1,6 @@
 package com.clinic.clinic_project.security.services;
 
-import com.clinic.clinic_project.controller.ClinicUserRepository;
+import com.clinic.clinic_project.repository.ClinicUserRepository;
 import com.clinic.clinic_project.model.Clinic_users;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

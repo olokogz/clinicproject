@@ -2,6 +2,7 @@ package com.clinic.clinic_project.controller;
 
 
 import com.clinic.clinic_project.model.Car;
+import com.clinic.clinic_project.repository.CarRepository;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +12,7 @@ import java.util.Collection;
 import java.util.stream.Collectors;
 
 @RestController
+@RequestMapping("/coolcar")
 public class CoolCarController {
     private CarRepository repository;
 
@@ -31,21 +33,7 @@ public class CoolCarController {
                 !car.getName().equals("Yugo GV");
     }
 
-    @PostMapping("/login")
-    @CrossOrigin(origins = "http://localhost:4200/login")
-    @ResponseBody
-    public Principal login(Principal user) {
-        return user;
-    }
-
-    @PostMapping("/register")
-    @CrossOrigin(origins = "http://localhost:4200/register")
-    public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpForm signUpRequest) {
-
-        if()
-    }
-
 
 }
 
-}
+

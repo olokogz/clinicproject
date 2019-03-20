@@ -26,7 +26,6 @@ public class Clinic_users implements Serializable {
     private String username;
     @NotBlank
     private String password;
-    @NotBlank
     private Boolean enabled;
     @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)
     @Fetch(FetchMode.SELECT)

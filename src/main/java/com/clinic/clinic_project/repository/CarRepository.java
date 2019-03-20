@@ -1,4 +1,4 @@
-package com.clinic.clinic_project.controller;
+package com.clinic.clinic_project.repository;
 
 
 import com.clinic.clinic_project.model.Car;
