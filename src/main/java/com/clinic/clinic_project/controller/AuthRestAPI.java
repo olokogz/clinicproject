@@ -47,7 +47,7 @@ public class AuthRestAPI {
     @Autowired
     JwtProvider jwtProvider;
 
-    @PostMapping("/signing")
+    @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginForm loginRequest)
     {
         Authentication authentication = authenticationManager.authenticate(
