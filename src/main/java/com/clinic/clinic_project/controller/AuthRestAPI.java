@@ -84,7 +84,8 @@ public class AuthRestAPI {
             }
 
         }
-        Clinic_users clinic_users = new Clinic_users(signUpRequest.getUsername(),passwordEncoder.encode(signUpRequest.getPassword()),temp);
+        Clinic_users clinic_users = new Clinic_users(signUpRequest.getUsername(),passwordEncoder.encode(signUpRequest.getPassword()), signUpRequest.getName(),signUpRequest.getSurename(),
+                signUpRequest.getPhoneNumber(), signUpRequest.getEmailAddress(), signUpRequest.getBirthdate(), signUpRequest.getGender(),temp);
 
         Set<String> strRoles = signUpRequest.getRole();
         Set<Authorities> roles = new HashSet<>();

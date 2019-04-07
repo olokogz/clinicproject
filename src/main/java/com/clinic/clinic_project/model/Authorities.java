@@ -1,5 +1,9 @@
 package com.clinic.clinic_project.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.ArrayList;
@@ -20,6 +24,7 @@ public class Authorities {
     @NotBlank
     private String description;
     @ManyToMany(mappedBy = "authorities")
+    @JsonIgnore
     private List<Clinic_users> clinic_users = new ArrayList<>();
 
     public Authorities() {

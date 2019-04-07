@@ -4,9 +4,9 @@ import com.clinic.clinic_project.model.Clinic_users;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
@@ -19,15 +19,27 @@ public class UserPrinciple implements UserDetails {
     @JsonIgnore
     private String password;
     private Collection<? extends GrantedAuthority> authorities;
+    private String name;
+    private String surename;
+    private String phoneNumber;
+    private String emailAddress;
+    private LocalDate birthdate;
+    private String gender;
 
 
 
-
-    public UserPrinciple(Long id, String username, boolean enabled, String password, Collection<? extends GrantedAuthority> authorities) {
+    public UserPrinciple(Long id, String username, boolean enabled, String password,String name,String surename,String phoneNumber,
+                         String emailAddress,LocalDate birthdate,String gender, Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
         this.username = username;
         this.enabled = enabled;
         this.password = password;
+        this.name = name;
+        this.surename = surename;
+        this.phoneNumber = phoneNumber;
+        this.emailAddress = emailAddress;
+        this.birthdate = birthdate;
+        this.gender = gender;
         this.authorities = authorities;
     }
 
@@ -41,6 +53,12 @@ public class UserPrinciple implements UserDetails {
                 clinic_users.getUsername(),
                 clinic_users.getEnabled(),
                 clinic_users.getPassword(),
+                clinic_users.getName(),
+                clinic_users.getSurename(),
+                clinic_users.getPhoneNumber(),
+                clinic_users.getEmailAddress(),
+                clinic_users.getBirthdate(),
+                clinic_users.getGender(),
                 authorities
         );
     }
@@ -58,6 +76,8 @@ public class UserPrinciple implements UserDetails {
     public String getUsername() {
         return this.username;
     }
+
+
 
     @Override
     public boolean isAccountNonExpired() {
