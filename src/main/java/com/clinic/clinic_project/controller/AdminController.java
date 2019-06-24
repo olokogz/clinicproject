@@ -39,7 +39,7 @@ public class AdminController {
     public ResponseEntity<?> getUserById(@PathVariable Long id){
         return ResponseEntity.ok(clinicUserRepository.findById(id));
     }
-    @PostMapping("delete/{id}")
+    @DeleteMapping("delete/{id}")
     public ResponseEntity<?> deleteUserById(@PathVariable Long id){
         clinicUserRepository.deleteById(id);
         return ResponseEntity.ok("deleted");
